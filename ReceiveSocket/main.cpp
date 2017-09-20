@@ -1,8 +1,10 @@
+#include <unistd.h>
 #include <iostream>
-#include "ReceiveSocket.h"
-#include "JPEGDecoder.h"
 #include <opencv2/opencv.hpp>
 
+#if 0
+#include "JPEGDecoder.h"
+#include "ReceiveSocket.h"
 int main() {
     CJPEGDecoder decoder;
     CReceiveSocket s;
@@ -28,3 +30,47 @@ int main() {
 
     return 0;
 }
+#else
+#include "ReceiveRTP.h"
+#include "H264Decoder.h"
+int main()
+{
+    CH264Decoder decoder;
+    ReceiveRTP receive;
+
+    //Receive a audio/video stream from client
+    receive.Init();
+
+    while (true)
+    {
+        if (receive.GetFirstSourceWithData())
+        {
+            do
+            {
+                int size = receive.GetH264Packet();
+                //int size = receive.GetJPEGPacket();
+                if (size)
+                {
+                    if (!decoder.Decode(receive.pBuff, size, NULL))
+                    {
+                        int width;
+                        int height;
+                        decoder.GetSize(width, height);
+                        cv::Mat image(cv::Size(width, height), CV_8UC1);
+                        decoder.GetData(image.data);
+
+                        cv::imshow("image", image);
+                        cv::waitKey(3);
+                        std::cout << "Lena is coming!" << std::endl;
+                    }
+                }
+            } while (receive.GotoNextSourceWithData());
+        }
+        sleep(0.1);
+    }
+
+    receive.Destroy();
+
+    return 0;
+}
+#endif

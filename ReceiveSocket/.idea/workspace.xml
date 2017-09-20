@@ -7,12 +7,13 @@
   </component>
   <component name="CMakeSettings">
     <configurations>
-      <configuration CONFIG_NAME="Debug" />
+      <configuration CONFIG_NAME="Release" />
     </configurations>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c52f85c-768a-43b7-b777-5a00d04bf551" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
+    <ignored path="$PROJECT_DIR$/cmake-build-release/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +26,8 @@
       <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+            <state relative-caret-position="270">
+              <caret line="15" column="38" lean-forward="false" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -35,24 +36,56 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="19" column="26" lean-forward="false" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+            <state relative-caret-position="182">
+              <caret line="38" column="23" lean-forward="true" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
-                <marker date="1505905690896" expanded="true" signature="329:697" ph="..." />
+                <element signature="e#77#781#0" expanded="true" />
+                <element signature="e#788#811#0" expanded="true" />
+                <marker date="1505911294496" expanded="true" signature="355:723" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JPEGDecoder.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="JPEGDecoder.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JPEGDecoder.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="49" column="25" lean-forward="true" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
+            <state relative-caret-position="110">
+              <caret line="49" column="25" lean-forward="false" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
               <folding>
                 <element signature="e#268#292#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="H264Decoder.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/H264Decoder.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReceiveRTP.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ReceiveRTP.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="333">
+              <caret line="109" column="0" lean-forward="true" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReceiveRTP.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ReceiveRTP.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-148">
+              <caret line="13" column="19" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -85,8 +118,8 @@
       <file leaf-file-name="ReceiveSocket.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ReceiveSocket.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2">
-              <caret line="54" column="38" lean-forward="false" selection-start-line="54" selection-start-column="38" selection-end-line="55" selection-end-column="1" />
+            <state relative-caret-position="144">
+              <caret line="20" column="36" lean-forward="false" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
               <folding>
                 <element signature="e#270#296#0" expanded="true" />
               </folding>
@@ -110,9 +143,12 @@
         <option value="$PROJECT_DIR$/ReceiveSocket.h" />
         <option value="$PROJECT_DIR$/JPEGDecoder.h" />
         <option value="$PROJECT_DIR$/ReceiveSocket.cpp" />
-        <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/JPEGDecoder.cpp" />
+        <option value="$PROJECT_DIR$/ReceiveRTP.h" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/ReceiveRTP.cpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/H264Decoder.cpp" />
       </list>
     </option>
   </component>
@@ -123,8 +159,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="291" />
-    <option name="y" value="424" />
+    <option name="x" value="804" />
+    <option name="y" value="50" />
     <option name="width" value="924" />
     <option name="height" value="1032" />
   </component>
@@ -159,7 +195,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="CPPToolchains" />
+    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -174,10 +210,10 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.ReceiveSocket">
-    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Release" EXPLICIT_BUILD_TARGET_NAME="all">
       <envs />
     </configuration>
-    <configuration name="ReceiveSocket" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ReceiveSocket" TARGET_NAME="ReceiveSocket" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="ReceiveSocket" RUN_TARGET_NAME="ReceiveSocket">
+    <configuration name="ReceiveSocket" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="ReceiveSocket" TARGET_NAME="ReceiveSocket" CONFIG_NAME="Release" RUN_TARGET_PROJECT_NAME="ReceiveSocket" RUN_TARGET_NAME="ReceiveSocket">
       <envs />
     </configuration>
     <list size="2">
@@ -201,12 +237,12 @@
       <workItem from="1505888607003" duration="2065000" />
       <workItem from="1505890757892" duration="5086000" />
       <workItem from="1505895945786" duration="2586000" />
-      <workItem from="1505898775449" duration="4005000" />
+      <workItem from="1505898775449" duration="8091000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29638000" />
+    <option name="totallyTimeSpent" value="33724000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="1084" extended-state="6" />
@@ -330,7 +366,9 @@
           <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <marker date="1505905690896" expanded="true" signature="329:697" ph="..." />
+            <element signature="e#77#781#0" expanded="true" />
+            <element signature="e#788#811#0" expanded="true" />
+            <marker date="1505911294496" expanded="true" signature="355:723" ph="..." />
           </folding>
         </state>
       </provider>
@@ -349,7 +387,9 @@
           <caret line="30" column="19" lean-forward="false" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <marker date="1505905690896" expanded="true" signature="329:697" ph="..." />
+            <element signature="e#77#781#0" expanded="true" />
+            <element signature="e#788#811#0" expanded="true" />
+            <marker date="1505911294496" expanded="true" signature="355:723" ph="..." />
           </folding>
         </state>
       </provider>
@@ -466,7 +506,9 @@
           <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <marker date="1505905690896" expanded="true" signature="329:697" ph="..." />
+            <element signature="e#77#781#0" expanded="true" />
+            <element signature="e#788#811#0" expanded="true" />
+            <marker date="1505911294496" expanded="true" signature="355:723" ph="..." />
           </folding>
         </state>
       </provider>
@@ -485,7 +527,9 @@
           <caret line="16" column="22" lean-forward="false" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <marker date="1505905690896" expanded="true" signature="329:697" ph="..." />
+            <element signature="e#77#781#0" expanded="true" />
+            <element signature="e#788#811#0" expanded="true" />
+            <marker date="1505911294496" expanded="true" signature="355:723" ph="..." />
           </folding>
         </state>
       </provider>
@@ -594,7 +638,9 @@
           <caret line="11" column="18" lean-forward="true" selection-start-line="11" selection-start-column="18" selection-end-line="11" selection-end-column="18" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <marker date="1505905690896" expanded="true" signature="329:697" ph="..." />
+            <element signature="e#77#781#0" expanded="true" />
+            <element signature="e#788#811#0" expanded="true" />
+            <marker date="1505911294496" expanded="true" signature="355:723" ph="..." />
           </folding>
         </state>
       </provider>
@@ -613,7 +659,9 @@
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
-            <marker date="1505905690896" expanded="true" signature="329:697" ph="..." />
+            <element signature="e#77#781#0" expanded="true" />
+            <element signature="e#788#811#0" expanded="true" />
+            <marker date="1505911294496" expanded="true" signature="355:723" ph="..." />
           </folding>
         </state>
       </provider>
@@ -674,42 +722,68 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="38" lean-forward="false" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ReceiveRTP.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-148">
+          <caret line="13" column="19" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ReceiveSocket.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2">
-          <caret line="54" column="38" lean-forward="false" selection-start-line="54" selection-start-column="38" selection-end-line="55" selection-end-column="1" />
+        <state relative-caret-position="144">
+          <caret line="20" column="36" lean-forward="false" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
           <folding>
             <element signature="e#270#296#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+    <entry file="file://$PROJECT_DIR$/ReceiveRTP.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        <state relative-caret-position="333">
+          <caret line="109" column="0" lean-forward="true" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="19" column="26" lean-forward="false" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-            <marker date="1505905690896" expanded="true" signature="329:697" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/JPEGDecoder.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="49" column="25" lean-forward="true" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
+        <state relative-caret-position="110">
+          <caret line="49" column="25" lean-forward="false" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
           <folding>
             <element signature="e#268#292#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="38" column="23" lean-forward="true" selection-start-line="38" selection-start-column="23" selection-end-line="38" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#77#781#0" expanded="true" />
+            <element signature="e#788#811#0" expanded="true" />
+            <marker date="1505911294496" expanded="true" signature="355:723" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/H264Decoder.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="28" lean-forward="true" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>

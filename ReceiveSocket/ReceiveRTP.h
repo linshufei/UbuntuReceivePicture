@@ -6,12 +6,12 @@ Discription:
 
 ****************************************************************************/
 #pragma once
-#include "jrtp/rtpsession.h"
-#include "jrtp/rtpudpv4transmitter.h"
-#include "jrtp/rtpipv4address.h"
-#include "jrtp/rtpsessionparams.h"
-#include "jrtp/rtperrors.h"
-#include "jrtp/rtppacket.h"
+#include "jrtplib3/rtpsession.h"
+#include "jrtplib3/rtpudpv4transmitter.h"
+#include "jrtplib3/rtpipv4address.h"
+#include "jrtplib3/rtpsessionparams.h"
+#include "jrtplib3/rtperrors.h"
+#include "jrtplib3/rtppacket.h"
 
 #ifdef _WIN32
 #include <winsock2.h>

@@ -15,7 +15,7 @@ using namespace jrtplib;
 ReceiveRTP::ReceiveRTP()
 {
     pos = 0;
-    portBase = 6664;
+    portBase = 8000;
     timeStampUnit = 1.0 / 90000.0;
 }
 
@@ -118,7 +118,6 @@ int ReceiveRTP::GetJPEGPacket()
 	{
 		loadData = pack->GetPayloadData();
 		int len = pack->GetPayloadLength();
-		std::cout << "$$$$" << (int)pack->GetPayloadType() << std::endl;
 		if (pack->GetPayloadType() == 26) //有效负载(载荷)类型 loadType H264=96
 		{
 			if (pack->HasMarker()) // the last packet
