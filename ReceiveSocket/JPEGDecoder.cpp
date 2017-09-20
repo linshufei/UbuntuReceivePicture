@@ -7,6 +7,7 @@ Discription:
 *****************************************************************************/
 
 #include "JPEGDecoder.h"
+#include <iostream>
 
 CJPEGDecoder::CJPEGDecoder()
 {
@@ -33,17 +34,16 @@ CJPEGDecoder::CJPEGDecoder()
 		printf("Fail to open decoder !\n");
 	}
 
-	pFrame = av_frame_alloc();
+    pFrame = av_frame_alloc();
 
-	frameCount = 0;
+    frameCount = 0;
 }
 
 CJPEGDecoder::~CJPEGDecoder()
 {
 	avcodec_close(pCodecCtx);
 	av_free(pCodecCtx);
-	av_frame_free(&pFrame);
-
+	av_free(pFrame);
 	if (packet != nullptr)
 	{
 		av_free(packet);
@@ -51,22 +51,27 @@ CJPEGDecoder::~CJPEGDecoder()
 	}
 }
 
-int CJPEGDecoder::Decode(uint8_t *pDataIn, int nInSize, uint8_t *pDataOut)
+int CJPEGDecoder::Decode(uint8_t *pDataIn, int nInSize)
 {
 	packet->size = nInSize;
 	packet->data = pDataIn;
+    std::cout << nInSize << std::endl;
 
 	int gotPicture;
-	int ret = avcodec_decode_video2(pCodecCtx, pFrame, &gotPicture, packet);
+    int ret = avcodec_decode_video2(pCodecCtx, pFrame, &gotPicture, packet);
 
-
-	if (ret < 0)
+	if (ret <= 0)
 	{
 		printf("Decode Error.\n");
 	}
-	if (gotPicture){
+	if (gotPicture)
+    {
 		return 0;
 	}
+    else
+    {
+        std::cout << "does not exist pciture" << std::endl;
+    }
 
 	return -1;
 }

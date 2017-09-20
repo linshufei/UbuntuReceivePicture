@@ -18,9 +18,19 @@ CReceiveSocket::CReceiveSocket()
     sockServer = socket(AF_INET, SOCK_STREAM, 0);
     addrServer.sin_addr.s_addr = htonl(INADDR_ANY); //INADDR_ANY��ʾ�κ�IP
     addrServer.sin_family = AF_INET;
-    addrServer.sin_port = htons(6000); //�󶨶˿�6000
-    sockServer = socket(AF_INET, SOCK_STREAM, 0); //socket(int domain, int type, int protocol)
-    bind(sockServer, (struct sockaddr*)&addrServer, sizeof(addrServer));
+    addrServer.sin_port = htons(8001); //�󶨶˿�6000
+    //sockServer = socket(PF_INET, SOCK_STREAM, 0); //socket(int domain, int type, int protocol)
+
+    int opt = 1;
+    //将端口设置为可重用的端口
+    setsockopt(sockServer, SOL_SOCKET, SO_REUSEPORT, &opt,sizeof(&opt));
+
+    int ret = bind(sockServer, (struct sockaddr*)&addrServer, sizeof(addrServer));
+
+    if(ret < 0)
+    {
+        std::cout << "Fail to bind ip or port, please use \"netstat -anpt\" check it!" << std::endl;
+    }
 }
 
 CReceiveSocket::~CReceiveSocket()
@@ -30,8 +40,8 @@ CReceiveSocket::~CReceiveSocket()
         delete[] pData;
         pData = nullptr;
     }
-
     close(sockClient);
+    close(sockServer);
    // WSACleanup();
 }
 
@@ -53,10 +63,10 @@ int CReceiveSocket::ReceiveFromClient(char* recvBuf, int recvBufLen)
 {
     int pos = 0;
     SImageHeader header;
-    int len = read(sockClient, &header, sizeof(SImageHeader));
+    int len = recv(sockClient, &header, sizeof(SImageHeader), 0);
     while (true)
     {
-        len = read(sockClient, &recvBuf[pos], 1024);
+        len = recv(sockClient, &recvBuf[pos], 1024, 0);
         pos += len;
         std::cout << "pos:" << pos << "/"<< header.dataSize <<std::endl;
         if (pos >= header.dataSize)
