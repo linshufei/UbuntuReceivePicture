@@ -15,7 +15,7 @@ using namespace jrtplib;
 ReceiveRTP::ReceiveRTP()
 {
     pos = 0;
-    portBase = 8000;
+    portBase = 8004;
     timeStampUnit = 1.0 / 90000.0;
 }
 
@@ -46,8 +46,7 @@ void ReceiveRTP::Destroy()
     }
 
     sess.EndDataAccess();
-    delay = RTPTime(10.0);
-    sess.BYEDestroy(delay, 0, 0);
+    sess.BYEDestroy(RTPTime(10.0), 0, 0);
 }
 
 void ReceiveRTP::CheckError(int rtpErr)
@@ -109,38 +108,4 @@ int ReceiveRTP::GetH264Packet()
     }
 
     return 0;
-}
-
-int ReceiveRTP::GetJPEGPacket()
-{
-	uint8_t* loadData;
-	while ((pack = sess.GetNextPacket()) != NULL)
-	{
-		loadData = pack->GetPayloadData();
-		int len = pack->GetPayloadLength();
-		if (pack->GetPayloadType() == 26) //有效负载(载荷)类型 loadType H264=96
-		{
-			if (pack->HasMarker()) // the last packet
-			{
-				memcpy(&pBuff[pos], loadData, len);
-				int size = len + pos;
-				sess.DeletePacket(pack);
-				pos = 0;
-				return size;
-			}
-			else
-			{
-				memcpy(&pBuff[pos], loadData, len);
-				pos = pos + len;
-			}
-		}
-		else
-		{
-			printf("!!!  GetPayloadType = %d !!!! \n ", pack->GetPayloadType());
-		}
-
-		sess.DeletePacket(pack);
-	}
-
-	return 0;
 }

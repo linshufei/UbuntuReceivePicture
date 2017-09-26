@@ -13,7 +13,7 @@ CH264Decoder::CH264Decoder()
     pFormatCtx = avformat_alloc_context();
     packet = (AVPacket *)av_malloc(sizeof(AVPacket));
 
-    pCodec = avcodec_find_decoder(AV_CODEC_ID_H265);
+    pCodec = avcodec_find_decoder(AV_CODEC_ID_H264);
     if (pCodec == NULL)
     {
         printf("Fail to get decoder !\n");

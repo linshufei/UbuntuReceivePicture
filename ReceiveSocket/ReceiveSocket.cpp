@@ -63,7 +63,9 @@ int CReceiveSocket::ReceiveFromClient(char* recvBuf, int recvBufLen)
 {
     int pos = 0;
     SImageHeader header;
+    puts("one");
     int len = recv(sockClient, &header, sizeof(SImageHeader), 0);
+    puts("two");
     while (true)
     {
         len = recv(sockClient, &recvBuf[pos], 1024, 0);
@@ -71,6 +73,7 @@ int CReceiveSocket::ReceiveFromClient(char* recvBuf, int recvBufLen)
         std::cout << "pos:" << pos << "/"<< header.dataSize <<std::endl;
         if (pos >= header.dataSize)
         {
+            //send(sockClient, "linglongqing", 20, 1);
             break;
         }
     }
@@ -78,6 +81,7 @@ int CReceiveSocket::ReceiveFromClient(char* recvBuf, int recvBufLen)
     std::cout << "length:" << len << std::endl;
     memcpy(pData, recvBuf, header.dataSize);
     SetSize(header.width, header.height, header.dataSize);
+
     return 0;
 }
 
@@ -86,5 +90,34 @@ int CReceiveSocket::SetSize(int &w, int &h ,int &size)
     width = w;
     height = h;
     imageSize = size;
+    return 0;
+}
+
+int CReceiveSocket::SendRes()
+{
+    send(sockClient, "copy", 20, 1);
+    std::cout << "Send response to client" << std::endl;
+    return 0;
+}
+
+int CReceiveSocket::SendImage(char* pData, int size ,int cols, int rows)
+{
+    char* pictureBuf;
+    pictureBuf = new char[MAX_IMAGE_SIZE];
+
+    //写数据头
+    SImageHeader imageHeader;
+    imageHeader.width = cols;
+    imageHeader.height = rows;
+    imageHeader.dataSize = size;
+    imageHeader.dataOffset = sizeof(imageHeader);
+
+    memcpy(pictureBuf, &imageHeader, sizeof(imageHeader));
+    memcpy(pictureBuf + sizeof(imageHeader), pData, size);
+
+    //send picture
+    send(sockClient, pictureBuf, size + sizeof(imageHeader), 0);
+    delete pictureBuf;
+
     return 0;
 }

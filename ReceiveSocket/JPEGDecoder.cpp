@@ -86,6 +86,9 @@ int CJPEGDecoder::GetSize(int& width, int& height)
 
 int CJPEGDecoder::GetData(uint8_t* pData)
 {
-	memcpy(pData, pFrame->data[0], pFrame->width * pFrame->height * sizeof(uint8_t));
+    int size = pFrame->width * pFrame->height;
+	memcpy(pData, pFrame->data[0], size * sizeof(uint8_t));
+    memcpy(pData + size, pFrame->data[1], size / 4 * sizeof(uint8_t));
+    memcpy(pData + size * 5 / 4, pFrame->data[2], size / 4 * sizeof(uint8_t));
 	return 0;
 }

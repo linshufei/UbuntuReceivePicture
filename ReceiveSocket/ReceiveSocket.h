@@ -44,6 +44,8 @@ public:
     int AcceptFromClient();
     int ReceiveFromClient(char* recvBuf, int recvBufLen);
     int SetSize(int &w, int &h, int &size);
+    int SendRes();
+    int SendImage(char* pData, int size ,int cols, int rows);
 };
 
 
